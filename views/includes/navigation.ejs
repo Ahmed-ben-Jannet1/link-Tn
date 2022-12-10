@@ -1,0 +1,108 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<body class="hero-anime">
+  <div class="navigation-wrap bg-light start-header start-style">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="navbar navbar-expand-md navbar-light">
+            <div style="margin-right: 0rem">
+              <a class="navbar-brand" href="/"
+                ><img src="/images/logo.png" alt=""
+              /></a>
+            </div>
+
+            <div
+              style="justify-content: center"
+              class="collapse navbar-collapse"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav ml-auto py-4 py-md-0">
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="/">Shop</a>
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="/products">Products</a>
+                </li>
+                <% if (isAuthenticated) { %>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="/cart">Cart</a>
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a
+                    class="<%= path === '/orders' ? 'active' : '' %> nav-link"
+                    href="/orders"
+                    >Orders</a
+                  >
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a
+                    class="<%= path === '/admin/add-product' ? 'active' : '' %> nav-link"
+                    href="/admin/add-product"
+                    >Add Product
+                  </a>
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a
+                    class="<%= path === '/admin/products' ? 'active' : '' %> nav-link"
+                    href="/admin/products"
+                    >Your Products
+                  </a>
+                </li>
+                <% } %> <% if (!isAuthenticated) { %>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a
+                    class="<%= path === '/login' ? 'active' : '' %> nav-link"
+                    href="/login"
+                    >Login</a
+                  >
+                </li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a
+                    class="<%= path === '/signup' ? 'active' : '' %> nav-link"
+                    href="/signup"
+                    >Signup</a
+                  >
+                </li>
+                <% } else { %>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <form action="/logout" method="post">
+                    <input
+                      type="hidden"
+                      name="_csrf"
+                      value="<%= csrfToken %>"
+                    />
+                    <button
+                      type="submit"
+                      style="
+                        border: none;
+                        background-color: transparent;
+                        color: #0f698f;
+                      "
+                    >
+                      Logout
+                    </button>
+                  </form>
+                </li>
+                <% } %>
+                <div
+                  style="
+                    height: 0.05rem;
+                    width: 0.05rem;
+                    margin-left: -2.3rem;
+                    margin-top: 0.5rem;
+                  "
+                >
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <div id="switch">
+                      <div id="circle"></div>
+                    </div>
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

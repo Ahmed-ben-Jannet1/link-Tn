@@ -1,0 +1,56 @@
+.product-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.product-item {
+    width: 20rem;
+    max-width: 95%;
+    margin: 1rem;
+}
+
+.product__title {
+    
+    text-align: center;
+}
+
+.product__price {
+    border : 2px solid transparent;
+    margin-bottom: 0.2rem;
+    text-align: center;   
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.product__description {
+    font-size: 1.2rem;
+    text-align: center;  
+    height: 7rem;
+}
+.product_image {
+    border: 2px solid black;
+    height: 50rem;
+    width: 15rem;
+    border-radius: 5px;
+}
+
+.product__category {
+    font-size: 1.2rem;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+
+}
+
+.search {
+    display:flex ;
+    justify-content: center;
+}
+.search select {
+    width: 20rem;
+}
+.search input {
+    width: 20rem;
+}
