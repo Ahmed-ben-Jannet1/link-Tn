@@ -10,6 +10,9 @@
   },
   "author": "Ahmed ben jannet",
   "license": "ISC",
+  "engines": {
+    "node": "18.12.1"
+  },
   "devDependencies": {
     "nodemon": "^1.18.3"
   },
